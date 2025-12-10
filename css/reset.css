@@ -1,0 +1,153 @@
+/* reset.css — baseado no "Andy Bell’s Modern CSS Reset"
+   Tradução / comentários em português
+
+   Objetivo: remover/normalizar estilos de navegadores, melhorar acessibilidade
+   e criar uma base previsível para o design.
+
+   Coloque este arquivo antes dos seus outros estilos (por exemplo, antes de base.css).
+*/
+
+/* 1) Root / tab-size */
+:root {
+  -moz-tab-size: 4;
+  tab-size: 4;
+}
+
+/* 2) Box sizing */
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/* 3) Remove margin on common elements */
+:where(html, body) {
+  height: 100%;
+}
+
+html, body, main {
+  margin: 0;
+  padding: 0;
+}
+
+/* 4) Improve text rendering */
+html {
+  -webkit-text-size-adjust: 100%; /* evita zoom indesejado no iOS */
+  -ms-text-size-adjust: 100%;
+}
+
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  background-color: transparent; /* sem cor por padrão */
+}
+
+/* 5) Make images, videos and canvas responsive */
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* 6) Typography defaults */
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word; /* quebra palavras longas */
+}
+
+h1, h2, h3, h4, h5, h6 {
+  margin: 0; /* controle de espaçamento pelo site */
+  font-weight: inherit;
+}
+
+/* 7) Remove list styles */
+ul[role='list'], ul, ol {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* 8) Inherit fonts for form controls */
+input, button, textarea, select {
+  font: inherit;
+}
+
+/* 9) Tables */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* 10) Links */
+a {
+  color: inherit;
+  text-decoration: inherit;
+}
+
+/* 11) Make media elements easier to control */
+video, audio {
+  max-width: 100%;
+}
+
+/* 12) Remove default button styles but keep focus for accessibility */
+button {
+  background: transparent;
+  color: inherit;
+  border: none;
+  padding: 0;
+}
+
+/* 13) Preserve useful defaults for details/summary */
+details {
+  display: block;
+}
+
+/* 14) Ensure form elements are readable */
+:-moz-focusring { outline: auto; }
+
+/* 15) Focus outlines (acessibilidade) */
+:focus {
+  outline: none;
+}
+:focus-visible {
+  outline: 3px solid Highlight;
+  outline-offset: 2px;
+}
+
+/* 16) Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.001s !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001s !important;
+    scroll-behavior: auto !important;
+  }
+}
+
+/* 17) Utility: visually-hidden (acessibilidade) */
+.visually-hidden {
+  position: absolute !important;
+  height: 1px; width: 1px;
+  overflow: hidden;
+  clip: rect(1px, 1px, 1px, 1px);
+  white-space: nowrap; /* evita quebra */
+}
+
+/* 18) Base interactive area sane defaults */
+a, button, input, textarea, select {
+  -webkit-tap-highlight-color: rgba(0,0,0,0);
+}
+
+/* 19) Small helpers to avoid unexpected subpixel gaps */
+img, svg { display: block; }
+
+/* 20) Prevent layout shifts from font loading (optional)
+   Uncomment and adapt se utilizar font-display: optional/swap nas fontes.
+*/
+/*
+html.fonts-loaded body {
+  /* estilos que dependem de fontes carregadas */
+/*}
+*/
+
+/* --- fim do reset --- */
